@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мілана, з Днем народження!</title>
+
+  <!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dariatkachenko-prog.github.io/Milana-s-dnem-narodzhennia/" />
+<meta property="og:title" content="🎁 Вітаємо з Днем народження, Мілана! Натисни на зображення — тебе чекає привітання🎈" />
+<meta property="og:image" content="https://dariatkachenko-prog.github.io/Milana-s-dnem-narodzhennia/preview.jpg?v=1" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Привітання з Днем народження для Мілани" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="🎁 Вітаємо з Днем народження, Мілана! Натисни на зображення — тебе чекає привітання🎈" />
+<meta name="twitter:image" content="https://dariatkachenko-prog.github.io/Milana-s-dnem-narodzhennia/preview.jpg?v=1" />
+
+<!-- Email Preview -->
+<meta name="description" content="🎁 Вітаємо з Днем народження, Мілана! Натисни на зображення — тебе чекає привітання🎈" />
+<meta name="keywords" content="День народження, привітання, подарунок, сюрприз, святкування, Мілана" />
+
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- External styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --main-font: 'Dancing Script', cursive, sans-serif;
+      --deep-violet: #2E003E; /* дуже темно-сиреневий */
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--main-font);
+      color: var(--deep-violet);
+    }
+
+    .h1-line,
+    .click-text,
+    .congrats-text p {
+      font-family: var(--main-font);
+    }
+
+    .hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 { font-size: 1.8rem; }
+      .click-text { font-size: 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Canvas для конфеті -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <div class="card">
+    <h1>
+      <span class="h1-line line1">МІЛАНА 🎉</span>
+      <span class="h1-line line2">З ДНЕМ НАРОДЖЕННЯ!</span>
+    </h1>
+
+    <div class="emoji-container" id="emoji-wrapper" aria-label="Натисни на кульку, щоб побачити привітання">
+      <!-- Показуємо кульку; якщо зображення відсутнє, падаємо назад на старий smiley.png -->
+      <img src="balloon.png" onerror="this.onerror=null;this.src='smiley.png';" alt="Кулька" id="smiley" class="floating" role="button" aria-label="Кулька — натисни" tabindex="0" />
+      <span class="click-text">Натисни на кульку 👇</span>
+    </div>
+
+    <div class="congrats-wrapper hidden" aria-live="polite">
+      <div class="congrats-text">
+        <div class="congrats-text-inner">
+          <p>
+            <span class="line">Хай кожен день буде казковим,</span><br />
+            <span class="line">Наповненим сміхом і новим чудом!,</span><br />
+            <span class="line">Бажаємо море пригод і відкриттів,</span><br />
+            <span class="line">Яскравих друзів і щасливих миттєвостей!</span><br /><br />
+            <span class="line">Хай свято принесе мрії й подарунки!</span><br /><br />
+          </p>
+        </div>
+      </div>
+      <div class="congrats-photo">
+        <img src="congrats-image.png" alt="Привітальне фото" />
+      </div>
+    </div>
+  </div>
+
+  <audio id="bg-music" src="music.mp3" loop></audio>
+  <audio id="open-sound" src="open.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
